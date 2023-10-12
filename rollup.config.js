@@ -4,19 +4,19 @@ export default {
     {
       file: 'dist/plugin.js',
       format: 'iife',
-      name: 'capacitorRolsterCapacitorAppReview',
+      name: 'RolsterCapacitorAppReview',
       globals: {
         '@capacitor/core': 'capacitorExports',
       },
       sourcemap: true,
-      inlineDynamicImports: true,
+      inlineDynamicImports: true
     },
     {
       file: 'dist/plugin.cjs.js',
       format: 'cjs',
       sourcemap: true,
-      inlineDynamicImports: true,
-    },
+      inlineDynamicImports: true
+    }
   ],
-  external: ['@capacitor/core'],
+  external: ['@capacitor/core']
 };

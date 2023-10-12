@@ -1,3 +1,4 @@
-export interface RolsterCapacitorAppReviewPlugin {
-  echo(options: { value: string }): Promise<{ value: string }>;
+export interface AppReviewPlugin {
+  requestReview(): Promise<void>;
+  openStoreScreen(): Promise<void>;
 }

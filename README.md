@@ -1,19 +1,29 @@
-# capacitor-app-review
+# Rolster Capacitor AppReview
 
-Must provide a description
+Use plugin for manage contact list of Device.
 
-## Install
+## Installation
 
-```bash
-npm install capacitor-app-review
-npx cap sync
+Package only supports Capacitor 5
+
+```
+npm i @rolster/capacitor-app-review
 ```
 
-## API
+### Android Config
 
-<docgen-index></docgen-index>
+And register the plugin by adding it to you MainActivity's onCreate:
 
-<docgen-api>
-<!-- run docgen to generate docs from the source -->
-<!-- More info: https://github.com/ionic-team/capacitor-docgen -->
-</docgen-api>
+```java
+import com.rolster.capacitor.appreview.AppReview;
+
+public class MainActivity extends BridgeActivity {
+  @Override
+  public void onCreate(Bundle savedInstanceState) {
+    registerPlugin(AppReview.class);
+    // Others register plugins
+
+    super.onCreate(savedInstanceState);
+  }
+}
+```

@@ -1,10 +1,9 @@
 import { registerPlugin } from '@capacitor/core';
+import type { AppReviewPlugin } from './definitions';
 
-import type { RolsterCapacitorAppReviewPlugin } from './definitions';
-
-const RolsterCapacitorAppReview = registerPlugin<RolsterCapacitorAppReviewPlugin>('RolsterCapacitorAppReview', {
-  web: () => import('./web').then(m => new m.RolsterCapacitorAppReviewWeb()),
+const AppReview = registerPlugin<AppReviewPlugin>('AppReview', {
+  web: () => import('./web').then(({ AppReviewWeb }) => new AppReviewWeb())
 });
 
 export * from './definitions';
-export { RolsterCapacitorAppReview };
+export { AppReview };

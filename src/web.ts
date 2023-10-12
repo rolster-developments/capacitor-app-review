@@ -1,10 +1,12 @@
 import { WebPlugin } from '@capacitor/core';
+import type { AppReviewPlugin } from './definitions';
 
-import type { RolsterCapacitorAppReviewPlugin } from './definitions';
+export class AppReviewWeb extends WebPlugin implements AppReviewPlugin {
+  requestReview(): Promise<void> {
+    return Promise.resolve();
+  }
 
-export class RolsterCapacitorAppReviewWeb extends WebPlugin implements RolsterCapacitorAppReviewPlugin {
-  async echo(options: { value: string }): Promise<{ value: string }> {
-    console.log('ECHO', options);
-    return options;
+  openStoreScreen(): Promise<void> {
+    return Promise.resolve();
   }
 }
