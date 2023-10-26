@@ -1,7 +1,6 @@
 package com.rolster.capacitor.appreview;
-
 import android.content.Intent;
-import com.getcapacitor.JSObject;
+import android.net.Uri;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
 import com.getcapacitor.PluginMethod;
@@ -14,9 +13,7 @@ public class AppReviewPlugin extends Plugin {
 
     @PluginMethod
     public void requestReview(PluginCall call) {
-        final AppCompatActivity activity = getActivity();
-
-        implementation.requestReview(call, activity);
+        implementation.requestReview(call, getActivity());
 
         call.resolve();
     }
