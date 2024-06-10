@@ -2,7 +2,7 @@ import { WebPlugin } from '@capacitor/core';
 import type { AppReviewPlugin } from './definitions';
 
 export class AppReviewWeb extends WebPlugin implements AppReviewPlugin {
-  requestReview(): Promise<void> {
+  request(): Promise<void> {
     return Promise.resolve();
   }
 

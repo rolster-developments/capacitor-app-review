@@ -1,4 +1,4 @@
 export interface AppReviewPlugin {
-  requestReview(): Promise<void>;
+  request(): Promise<void>;
   openStoreScreen(): Promise<void>;
 }

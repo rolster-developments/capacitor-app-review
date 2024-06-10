@@ -2,9 +2,9 @@ import Foundation
 import Capacitor
 import StoreKit
 
-@objc(AppReviewPlugin)
-public class AppReviewPlugin: CAPPlugin {
-    @objc func requestReview(_ call: CAPPluginCall) {
+@objc(AppReview)
+public class AppReview: CAPPlugin {
+    @objc func request(_ call: CAPPluginCall) {
         SKStoreReviewController.requestReview()
         call.resolve()
     }

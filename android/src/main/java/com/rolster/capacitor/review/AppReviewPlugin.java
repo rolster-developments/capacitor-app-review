@@ -1,4 +1,5 @@
-package com.rolster.capacitor.appreview;
+package com.rolster.capacitor.review;
+
 import android.content.Intent;
 import android.net.Uri;
 import com.getcapacitor.Plugin;
@@ -7,13 +8,12 @@ import com.getcapacitor.PluginMethod;
 import com.getcapacitor.annotation.CapacitorPlugin;
 
 @CapacitorPlugin(name = "AppReview")
-public class AppReviewPlugin extends Plugin {
-
-    private AppReview implementation = new AppReview();
-
+public class AppReviewPlugin extends Plugin implements AppReviewResolve {
     @PluginMethod
-    public void requestReview(PluginCall call) {
-        implementation.requestReview(call, getActivity());
+    public void request(PluginCall call) {
+        AppReview appReview = new AppReview(this);
+
+        appReview.request(getActivity());
 
         call.resolve();
     }
@@ -28,5 +28,22 @@ public class AppReviewPlugin extends Plugin {
         getActivity().startActivity(intent);
 
         call.resolve();
+    }
+
+    @Override
+    public void onComplete() {
+        JSObject result = new JSObject();
+        result.put("success", true);
+
+        notifyListeners("appReviewEvent", result);
+    }
+
+    @Override
+    public void onFailure(String message) {
+        JSObject result = new JSObject();
+        result.put("success", false);
+        result.put("message", message);
+
+        notifyListeners("appReviewEvent", result);
     }
 }
