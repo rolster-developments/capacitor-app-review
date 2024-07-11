@@ -1,6 +1,6 @@
 {
   "name": "@rolster/capacitor-app-review",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "Must provide a description",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
