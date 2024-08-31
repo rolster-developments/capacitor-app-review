@@ -48,5 +48,5 @@ import { AppReview } from '@rolster/capacitor-app-review';
 
 AppReview.request();
 // request dialog and provide fallback
-AppReview.request().catch(() => AppReview.openStoreScreen());
+AppReview.request().catch(() => AppReview.openStore());
 ```
