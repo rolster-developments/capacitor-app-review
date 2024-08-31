@@ -2,6 +2,7 @@ package com.rolster.capacitor.review;
 
 import android.content.Intent;
 import android.net.Uri;
+
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
@@ -12,15 +13,13 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 public class AppReviewPlugin extends Plugin implements AppReviewResolve {
     @PluginMethod
     public void request(PluginCall call) {
-        AppReview appReview = new AppReview(this);
-
-        appReview.request(getActivity());
+        AppReview.request(getActivity(), this);
 
         call.resolve();
     }
 
     @PluginMethod
-    public void openStoreScreen(PluginCall call) {
+    public void openStore(PluginCall call) {
         final String packageName = getActivity().getPackageName();
 
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + packageName));
@@ -32,18 +31,18 @@ public class AppReviewPlugin extends Plugin implements AppReviewResolve {
     }
 
     @Override
-    public void onComplete() {
+    public void onComplete(String status) {
         JSObject result = new JSObject();
-        result.put("success", true);
+        result.put("status", status);
 
         notifyListeners("appReviewEvent", result);
     }
 
     @Override
-    public void onFailure(String message) {
+    public void onFailure(String status, String message) {
         JSObject result = new JSObject();
-        result.put("success", false);
-        result.put("message", message);
+        result.put("status", status);
+        result.put("msgError", message);
 
         notifyListeners("appReviewEvent", result);
     }

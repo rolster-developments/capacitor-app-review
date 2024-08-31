@@ -5,5 +5,5 @@
 // each method the plugin supports using the CAP_PLUGIN_METHOD macro.
 CAP_PLUGIN(AppReview, "AppReview",
   CAP_PLUGIN_METHOD(request, CAPPluginReturnPromise);
-  CAP_PLUGIN_METHOD(openStoreScreen, CAPPluginReturnPromise);
+  CAP_PLUGIN_METHOD(openStore, CAPPluginReturnPromise);
 )

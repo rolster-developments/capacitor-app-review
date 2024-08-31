@@ -1,17 +1,24 @@
 {
   "name": "@rolster/capacitor-app-review",
-  "version": "5.1.1",
-  "description": "Must provide a description",
+  "version": "6.0.0",
+  "description": "Allows you to ask users to submit app store ratings and reviews without the hassle of leaving the app",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "unpkg": "dist/plugin.js",
-  "author": "Daniel Andrés Castillo Pedroza",
+  "author": "Rolster Developers",
+  "contributors": [
+    {
+      "name": "Daniel Andrés Castillo Pedroza",
+      "email": "ing.dacastillop@gmail.com"
+    }
+  ],
   "license": "MIT",
   "files": [
+    "android/src/main",
+    "android/build.gradle",
     "dist/",
-    "android/",
-    "ios/",
+    "ios/Plugin",
     "RolsterCapacitorAppReview.podspec"
   ],
   "scripts": {
@@ -31,10 +38,10 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@capacitor/android": "^5.0.0",
-    "@capacitor/core": "^5.0.0",
+    "@capacitor/android": "^6.0.0",
+    "@capacitor/core": "^6.0.0",
     "@capacitor/docgen": "^0.0.18",
-    "@capacitor/ios": "^5.0.0",
+    "@capacitor/ios": "^6.0.0",
     "eslint": "^7.11.0",
     "prettier": "~2.3.0",
     "prettier-plugin-java": "~1.0.2",
@@ -43,7 +50,7 @@
     "typescript": "~4.1.5"
   },
   "peerDependencies": {
-    "@capacitor/core": "^5.0.0"
+    "@capacitor/core": "^6.0.0"
   },
   "capacitor": {
     "ios": {
@@ -56,7 +63,9 @@
   "keywords": [
     "capacitor",
     "plugin",
-    "native"
+    "android",
+    "ios",
+    "app-review"
   ],
   "repository": {
     "type": "git",
