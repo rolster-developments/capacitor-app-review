@@ -6,7 +6,7 @@ export class AppReviewWeb extends WebPlugin implements AppReviewPlugin {
     return Promise.resolve();
   }
 
-  openStoreScreen(): Promise<void> {
+  openStore(): Promise<void> {
     return Promise.resolve();
   }
 }

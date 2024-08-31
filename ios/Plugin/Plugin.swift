@@ -9,7 +9,7 @@ public class AppReview: CAPPlugin {
         call.resolve()
     }
     
-    @objc func openStoreScreen(_ call: CAPPluginCall) {
+    @objc func openStore(_ call: CAPPluginCall) {
         call.resolve()
     }
 }
