@@ -4,7 +4,7 @@ Use plugin for manage contact list of Device.
 
 ## Installation
 
-Package only supports Capacitor 5
+Package only supports Capacitor 6
 
 ```
 npm i @rolster/capacitor-app-review
