@@ -1,6 +1,6 @@
 {
   "name": "@rolster/capacitor-app-review",
-  "version": "6.0.1",
+  "version": "6.0.2",
   "description": "Allows you to ask users to submit app store ratings and reviews without the hassle of leaving the app",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
